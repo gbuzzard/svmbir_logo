@@ -1,6 +1,6 @@
 svmbir_logo
 -----------
-.. automodule:: svmbir_logo
+.. automodule:: svmbir_logo.src.generate_logo
    :members:
    :undoc-members:
    :show-inheritance:
