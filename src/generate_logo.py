@@ -56,10 +56,13 @@ def copy_in(target, source, h_offset=0, w_offset=0, method="copy"):
     return target
 
 
-if __name__ == '__main__':
-
+def generate_logo(filename):
+    """
+    :param filename: Name of image file used to generate the sinogram for inclusion in the logo.
+    :return: None
+    """
     # Load the svmbir image, convert to negative, display, and save
-    image = read_grey('images/svmbir.png')
+    image = read_grey(filename)
     image = 1-image
 
     plt.imshow(image, cmap=plt.cm.Greys_r)
@@ -176,3 +179,8 @@ if __name__ == '__main__':
     plt.imshow(logo, cmap=plt.cm.Greys_r)
     plt.show()
     imsave('logo.png', logo)
+
+
+if __name__ == '__main__':
+
+    generate_logo('images/svmbir.png')

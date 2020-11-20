@@ -48,6 +48,7 @@ dependencies:
   - scipy=1.5.2=py38h2515648_0
   - setuptools=50.3.1=py38hecd8cb5_1
   - six=1.15.0=py38hecd8cb5_0
+  - sphinx_rtd_theme=0.4.3=py_0
   - sqlite=3.33.0=hffcf06c_0
   - tifffile=2020.10.1=py38h0cf3a3e_2
   - tk=8.6.10=hb0a8c7a_0
