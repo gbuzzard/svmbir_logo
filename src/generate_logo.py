@@ -4,8 +4,7 @@
 
 """
 Overview:
-
-Generate the svmbir logo.  See https://svmbir.readthedocs.io/en/latest/
+    Generate the svmbir logo.  See https://svmbir.readthedocs.io/en/latest/
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,9 +24,12 @@ def read_grey(filename, channel=0):
     Read an image file and return the red component (or component specified by channel)
     of the image.  This is used to get an nxm greyscale image from a file saved in rgb or rgba format.
 
-    :param filename: Name of image file to read
-    :param channel: Index of rgba channel to save if provided (defaults to red).
-    :return: The specified component of an rgb or rgba image.
+    Args:
+        filename: Name of image file to read
+        channel: Index of rgba channel to save if provided (defaults to red).
+
+    Returns:
+        The specified component of an rgb or rgba image.
     """
     img = imread(filename)
     if len(img.shape) > 2:
@@ -39,12 +41,16 @@ def copy_in(target, source, h_offset=0, w_offset=0, method="copy"):
     """
     Copy source array into the specified location in target array
 
-    :param target: Image to copy into
-    :param source: Image to copy from
-    :param h_offset: Starting x index of target
-    :param w_offset: Starting y index of target
-    :param method: String - either "copy" to copy the source or "max" to take the max of source and target
-    :return: The updated target
+    Args:
+        target: Image to copy into
+        source: Image to copy from
+        h_offset: Starting x index of target
+        w_offset: Starting y index of target
+        method: String - either "copy" to copy the source or "max" to take the max of source and target
+
+    Returns:
+        The updated target
+
     """
     h = source.shape[0]
     w = source.shape[1]
@@ -60,8 +66,11 @@ def generate_logo(filename):
     """
     Load component images, apply a sinogram, and assemble to form the svmbir logo.
 
-    :param filename: Name of image file used to generate the sinogram for inclusion in the logo.
-    :return: None
+    Args:
+        filename: Name of image file used to generate the sinogram for inclusion in the logo.
+
+    Returns:
+        None
     """
     # Load the svmbir image, convert to negative, display, and save
     image = read_grey(filename)
